@@ -1,0 +1,5 @@
+1. Extracción de datos con read para no llenar la memoria, ahora si es poco los datos hacerlo con pandas.
+2. Transformar el DataFrame.
+3. Sacar las estadísticas básicas.
+4. Limpiar datos NaN.
+
