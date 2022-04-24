@@ -22,3 +22,5 @@ def validar(edad):
 	return permiso
 
 print(validar(edad))
+
+
