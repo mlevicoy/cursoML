@@ -53,4 +53,12 @@ if asignatura.lower() in ("matemáticas", "lenguaje", "ingles", "portugues", "ci
 else:
 	print("La asignatura escogida no está contemprada")
 
+# ---------------------------------------------------------------------------
+
+i=1
+for estaciones in ["primavera", "verano", "otoño", "invierno"]:
+	print("{}: {}".format(i,estaciones))
+	i+=1
+
+
 
