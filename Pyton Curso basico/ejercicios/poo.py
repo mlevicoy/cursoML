@@ -14,13 +14,16 @@ class Coche():
 			return "El coche esta detenido"
 
 	def estado(self):
-		print("El coche tiene ", self.__ruedas, " ruedas. Un ancho de ", self.__anchoChasis, " y un largo de ", self.__largoChasis)
+		print("El coche tiene ", self.__ruedas, 
+			" ruedas. Un ancho de ", self.__anchoChasis, 
+			" y un largo de ", self.__largoChasis)
 
 # Instanciamos a la clase Coche
 miCoche = Coche()
-
+# Llamamos al metodo arrancar y cambiamos valor
+# de la variable enmarcha
 print(miCoche.arrancar(True))
-
+# Llamamos al método estadao
 miCoche.estado()
 
 # Instanciamos de nuevo
