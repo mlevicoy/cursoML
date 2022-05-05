@@ -4,9 +4,18 @@ from io import open
 # Se habre el fichero para leer
 archivo_texto = open("archivo.txt", "r")
 
+archivo_texto.seek(len(archivo_texto.read())/2)
+
 print(archivo_texto.read())
-archivo_texto.seek(0)
-print(archivo_texto.read())
+
+
+
+
+
+#print(archivo_texto.read())
+#archivo_texto.seek(0)
+#print(archivo_texto.read(11))
+
 
 
 
