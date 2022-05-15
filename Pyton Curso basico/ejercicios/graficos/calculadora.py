@@ -5,6 +5,9 @@ raiz = Tk()
 miFrame = Frame(raiz)
 miFrame.pack()
 
+operacion = ""
+resultado = 0
+
 # ------------- Pantalla -------------
 	# Crear variable
 numeroPantalla = StringVar()
@@ -16,9 +19,33 @@ pantalla.config(background="black", fg="#03f943", justify="right")
 
 # ------------- Pulsación teclado -------------
 def numeroPulsado(num):
-		# Agregar un dato a la pantalla, pero con get() no
-		# elimina lo anterior, lo concatena
-	numeroPantalla.set(numeroPantalla.get() + num)
+	global operacion
+
+	if operacion != "":
+		numeroPantalla.set(num)
+		operacion = ""
+	else:
+			# Agregar un dato a la pantalla, pero con get() no
+			# elimina lo anterior, lo concatena
+		numeroPantalla.set(numeroPantalla.get() + num)
+
+# ------------- Función suma -------------
+
+def suma(sum):
+	global operacion
+	global resultado
+
+	resultado += int(num)
+	operacion = "suma"
+	numeroPantalla.set(resultado)
+
+# ------------- Función el_resultado -------------
+
+def el_resultado():
+	global resultado
+
+	numeroPantalla.set(resultado + int(numeroPantalla.get()))
+	resultado = 0
 
 # ------------- Fila 1 -------------
 	# Con lambda permite el uso del parametro y que no agregue automáticamente
@@ -57,9 +84,9 @@ boton0 = Button(miFrame, text="0", width="3", command=lambda:numeroPulsado("0"))
 boton0.grid(row=5, column=1)
 botonComa = Button(miFrame, text=",", width="3", command=lambda:numeroPulsado(","))
 botonComa.grid(row=5, column=2)
-botonIgual = Button(miFrame, text="=", width="3")
+botonIgual = Button(miFrame, text="=", width="3", command=lambda:el_resultado())
 botonIgual.grid(row=5, column=3)
-botonSuma = Button(miFrame, text="+", width="3")
+botonSuma = Button(miFrame, text="+", width="3", command=lambda:suma(numeroPantalla.get()))
 botonSuma.grid(row=5, column=4)
 
 raiz.mainloop()	
