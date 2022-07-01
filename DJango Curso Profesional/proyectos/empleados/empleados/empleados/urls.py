@@ -22,5 +22,6 @@ urlpatterns = [
     # incluimos las urls de las apps departamento y persona
     path('', include('applications.departamento.urls')),
     path('', include('applications.persona.urls')),
-]
+    path('', include('applications.home.urls')),
+]   
 
