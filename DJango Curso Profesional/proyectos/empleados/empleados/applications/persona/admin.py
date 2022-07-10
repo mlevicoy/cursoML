@@ -11,7 +11,12 @@ class EmpleadoAdmin(admin.ModelAdmin):
         'last_name',
         'departamento',
         'job',
+        'full_name',
     )
+    # Función para 'full_name'
+    def full_name(self, obj):
+        return  obj.firt_name + ' ' + obj.last_name
+    
     # Filtro buscador (horizontal)
     search_fields = ('firt_name', )
     # Filtro vertical
